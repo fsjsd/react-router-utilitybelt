@@ -1,0 +1,24 @@
+{
+  "name": "react-router-utilitybelt",
+  "version": "1.0.0",
+  "description": "Opinionated react-router UI components with unopinionated styling!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fsjsd/react-router-utilitybelt.git"
+  },
+  "keywords": [
+    "reactrouter",
+    "react",
+    "router"
+  ],
+  "author": "Chris Webb",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fsjsd/react-router-utilitybelt/issues"
+  },
+  "homepage": "https://github.com/fsjsd/react-router-utilitybelt#readme"
+}
