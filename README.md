@@ -19,7 +19,7 @@ No other 3rd party packages are used so you can reason about what's going on wit
 
 * :gift: Built with Create React App
 * :trophy: Best practices React.js
-* :memo: Pure function components throughout, along with hooks
+* :memo: Function components throughout, along with hooks
 
 ## Requirements
 
