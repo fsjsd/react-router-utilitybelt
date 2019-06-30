@@ -1,13 +1,20 @@
 {
   "name": "react-router-utilitybelt",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Opinionated react-router UI components with unopinionated styling!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublishOnly": "npm run release",
+    "release": "npm run build:dev && npm run build:prod",
+    "build:dev": "cross-env NODE_ENV=development rollup -c \"./scripts/rollup.config.development.js\" ",
+    "build:prod": "cross-env NODE_ENV=production rollup -c \"./scripts/rollup.config.production.js\" ",
+    "test": "npm run build:dev && jest --config ./scripts/jest.config.js",
+    "demo": "npm run build:dev && cd demoapp && npm run start",
+    "demoold": "cross-env NODE_ENV=demo rollup -c \"./scripts/rollup.config.demo.js\" && live-server --open=./demo/ "
   },
-    "build:dev": "cross-env NODE_ENV=development&& rollup -c",
-    "build:prod": "cross-env NODE_ENV=production&& rollup -c"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fsjsd/react-router-utilitybelt.git"
   },
   "keywords": [
     "reactrouter",
@@ -19,5 +26,36 @@
   "bugs": {
     "url": "https://github.com/fsjsd/react-router-utilitybelt/issues"
   },
-  "homepage": "https://github.com/fsjsd/react-router-utilitybelt#readme"
+  "homepage": "https://github.com/fsjsd/react-router-utilitybelt#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-external-helpers": "^7.2.0",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "cross-env": "^5.2.0",
+    "live-server": "^1.2.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-icons": "^3.7.0",
+    "react-router-dom": "^5.0.1",
+    "react-router-prop-types": "^1.0.4",
+    "rollup": "^1.15.6",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-babel-minify": "^8.0.0",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-minify": "^1.0.3",
+    "rollup-plugin-node-resolve": "^5.0.3",
+    "rollup-plugin-react-svg": "^3.0.3",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-sass": "^1.2.2",
+    "styled-components": "^4.3.2"
+  },
+  "peerDependencies": {
+    "react": ">= 16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1"
+  },
+  "dependencies": {
+    "fsjsd-lgr": "0.0.5"
+  }
 }

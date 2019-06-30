@@ -1,0 +1,28 @@
+{
+  "extends": [
+    "react-app",
+    "airbnb"
+  ],
+  "rules": {
+    "indent": [
+      "warn",
+      2
+    ],
+    "react/jsx-indent": [
+      "warn",
+      2
+    ],
+    "react/forbid-prop-types": "off",
+    "linebreak-style": "off",
+    "import/no-extraneous-dependencies": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ]
+  }
+}
