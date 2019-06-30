@@ -6,9 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fsjsd/react-router-utilitybelt.git"
+    "build:dev": "cross-env NODE_ENV=development&& rollup -c",
+    "build:prod": "cross-env NODE_ENV=production&& rollup -c"
   },
   "keywords": [
     "reactrouter",
