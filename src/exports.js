@@ -5,6 +5,8 @@ import BreadCrumbs from "./components/BreadCrumbs";
 import RouteCatalog from "./components/RouteCatalog";
 import DrawerNavigation from "./components/DrawerNavigation";
 import RouteDefinitionNavLink from "./components/RouteDefinitionNavLink";
+import LeftNavLink from "./components/LeftNavLink";
+
 import PageTitle from "./components/PageTitle";
 import useCurrentPageTitle from "./hooks/useCurrentPageTitle";
 import useSetPageTitleOverride from "./hooks/useSetPageTitleOverride";
@@ -17,6 +19,7 @@ export default {
   DrawerNavigation,
   PageTitle,
   RouteDefinitionNavLink,
+  LeftNavLink,
   useCurrentPageTitle,
   useSetPageTitleOverride
 };

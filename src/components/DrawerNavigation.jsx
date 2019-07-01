@@ -3,26 +3,29 @@ import PropTypes from "prop-types";
 import RouteDefinitionNavLink from "./RouteDefinitionNavLink";
 import LeftNavLink from "./LeftNavLink";
 import { AppRoutesContext } from "../services/AppRoutesContext";
-//import { MdArrowBack } from "react-icons/md";
-//import { navItemGroups } from "../AppRoutes";
-
-// eslint-disable-next-line no-unused-vars
-//import logger from "../utils/logger";
-//import './DrawerNavigation.css';
 
 // Left Navigation component.
 // - renders out all valid route definitions as grouped links
 // or as 'flat' list of matching results to supplied filter
 
-const DrawerNavigation = ({ filter, className }) => {
+const DrawerNavigation = ({
+  filter,
+  renderDrawerContainer,
+  renderRouteNavLinks,
+  renderRouteNavLink,
+  renderBackLink,
+  renderNoRoutes,
+  renderNavGroup,
+  className
+}) => {
+  // react-router-utilitybel context globals
   const {
     appRoutes,
     appRoutesList,
     navItemGroups,
     currentRoute,
     filterRoutes,
-    navigate,
-    uiBackIcon
+    navigate
   } = useContext(AppRoutesContext);
 
   /*
@@ -55,11 +58,6 @@ const DrawerNavigation = ({ filter, className }) => {
     }
   }, [parentRoute, useSubNavOnMount]);
 
-  // adjust drawer 'slided' state based on if showSubNav set
-  const drawerWrapperClassNames = `DrawerWrapper${
-    subDrawerOpen && filter === "" ? " Opened" : ""
-  }`;
-
   // intercept every Nav Link and slide drawer out if appropriate
   const handleNavLinkClick = routeDef => {
     if (routeDef.showSubNav) {
@@ -86,30 +84,24 @@ const DrawerNavigation = ({ filter, className }) => {
     return route.showInNav && route.path === currentRoute.path;
   };
 
-  const navLinksGroup = routeDefs => (
-    <ul className="NavLinks">
-      {routeDefs.map(route => (
-        <li key={route.path}>
-          <RouteDefinitionNavLink
-            className="NavLink"
-            route={route}
-            onClick={() => handleNavLinkClick(route)}
-          />
-        </li>
-      ))}
-      {routeDefs.length === 0 && (
-        <li>
-          <div className="NavLabel">No matches</div>
-        </li>
-      )}
-    </ul>
-  );
+  const navLinksGroup = routeDefs =>
+    renderRouteNavLinks(() => (
+      <>
+        {routeDefs.map(route => renderRouteNavLink(route, handleNavLinkClick))}
+        {routeDefs.length === 0 && renderNoRoutes()}
+      </>
+    ));
+
+  // adjust drawer 'slided' state based on if showSubNav set
+  const drawerWrapperClassNames = `DrawerWrapper${
+    subDrawerOpen && filter === "" ? " Opened" : ""
+  }`;
 
   return (
     <div className={className}>
       <div className={drawerWrapperClassNames}>
-        <div className="MainDrawer">
-          {filter !== "" ? (
+        {renderDrawerContainer("main", () =>
+          filter !== "" ? (
             // either render flat search results ...
             navLinksGroup(appRoutesList.filter(filterRoutes(filter)))
           ) : (
@@ -118,11 +110,7 @@ const DrawerNavigation = ({ filter, className }) => {
               {navItemGroups &&
                 navItemGroups.map(group => (
                   <Fragment key={group}>
-                    {group !== "" ? (
-                      <div className="NavGroup">{group}</div>
-                    ) : (
-                      ""
-                    )}
+                    {group !== "" ? renderNavGroup(group) : ""}
                     {navLinksGroup(
                       appRoutesList.filter(
                         route =>
@@ -134,18 +122,18 @@ const DrawerNavigation = ({ filter, className }) => {
                   </Fragment>
                 ))}
             </>
-          )}
-        </div>
-        <div className="SubDrawer">
-          <LeftNavLink
-            label="Back"
-            icon={uiBackIcon}
-            onClick={handleBackClick}
-          />
-          {subDrawerOpen ? (
-            <>{navLinksGroup(appRoutesList.filter(subNavFilter))}</>
-          ) : null}
-        </div>
+          )
+        )}
+        {renderDrawerContainer("sub", () => {
+          return (
+            <>
+              {renderBackLink(handleBackClick)}
+              {subDrawerOpen ? (
+                <>{navLinksGroup(appRoutesList.filter(subNavFilter))}</>
+              ) : null}
+            </>
+          );
+        })}
       </div>
     </div>
   );

@@ -4,16 +4,16 @@ import PropTypes from "prop-types";
 //import { MdChevronRight } from "react-icons/md";
 //import './RouteDefinitionNavLink.css';
 
-const RouteDefinitionNavLink = ({ route, uiChevron, onClick }) => (
+const RouteDefinitionNavLink = ({ route, uiChevron, onClick, className }) => (
   <NavLink
-    className="NavLink"
+    className={className}
     activeClassName="active"
     to={route.path}
     exact={route.exact}
     onClick={() => onClick && onClick()}
   >
     {route.icon && route.icon()}
-    <span className="NavLinkLabel">{route.navlabel || route.title}</span>
+    <label>{route.navlabel || route.title}</label>
     {route.showSubNav ? (uiChevron ? uiChevron() : ">") : null}
   </NavLink>
 );
