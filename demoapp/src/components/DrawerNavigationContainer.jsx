@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styled from "styled-components";
 import { MdChevronRight, MdArrowBack } from "react-icons/md";
 
@@ -9,21 +8,24 @@ import {
   LeftNavLink
 } from "react-router-utilitybelt";
 
+const navWidth = "240";
+
 const DrawerNavigationStyled = styled(DrawerNavigation)`
-  width: 240px;
+  width: ${navWidth}px;
   overflow: hidden;
+`;
 
-  .DrawerWrapper {
-    position: relative;
-    width: 480px;
-    left: 0;
-    display: flex;
-    transition: ease 0.3s left;
-  }
-
-  .DrawerWrapper.Opened {
-    left: -240px;
-  }
+const DrawerWrapper = styled.div`
+  position: relative;
+  width: ${navWidth * 2}px;
+  left: 0;
+  display: flex;
+  transition: ease 0.3s left;
+  ${props =>
+    props.isOpen
+      ? `
+    left: -${navWidth}px;`
+      : ``}
 `;
 
 const NavGroup = styled.div`
@@ -54,10 +56,20 @@ const navLinkStyle = `
   text-decoration: none;
   cursor: pointer;
   transition: ease 0.5s color, ease 0.2s background-color;
+  display: flex;
 
   &:hover {
     background-color: rgb(240, 240, 240);
     color: rgba(0, 0, 0, 0.95);
+  }
+  
+  &.active {
+    background-color: rgb(239, 246, 255);
+    color: rgb(33, 111, 212);
+    span,
+    label {
+      color: rgb(33, 111, 212);
+    }
   }
 
   label {
@@ -66,8 +78,11 @@ const navLinkStyle = `
     cursor: pointer;
   }
 
-  svg {
+  svg{
     font-size: 18px;
+    }
+
+  svg:first-child {
     margin-right: 10px;
   }
 `;
@@ -78,20 +93,10 @@ const StyledLeftNavLink = styled(LeftNavLink)`
 
 const StyledRouteDefinitionNavLink = styled(RouteDefinitionNavLink)`
   ${navLinkStyle}
-  display: flex;
-
-  &.active {
-    background-color: rgb(239, 246, 255);
-    color: rgb(33, 111, 212);
-    span,
-    label {
-      color: rgb(33, 111, 212);
-    }
-  }
 `;
 
-const DrawerContainer = styled.div`
-  width: 240px;
+const DrawerMenu = styled.div`
+  width: ${navWidth}px;
 `;
 
 const NavLabel = styled.div`
@@ -105,8 +110,11 @@ const NavLabel = styled.div`
 const DrawerNavigationContainer = ({ filter }) => (
   <DrawerNavigationStyled
     filter={filter}
-    renderDrawerContainer={(drawerType, renderChildren) => (
-      <DrawerContainer>{renderChildren()}</DrawerContainer>
+    renderDrawerMenu={(drawerType, renderChildren) => (
+      <DrawerMenu>{renderChildren()}</DrawerMenu>
+    )}
+    renderDrawerControl={(isOpen, renderChildren) => (
+      <DrawerWrapper isOpen={isOpen}>{renderChildren()}</DrawerWrapper>
     )}
     renderRouteNavLinks={renderChildren => (
       <NavLinks>{renderChildren()}</NavLinks>

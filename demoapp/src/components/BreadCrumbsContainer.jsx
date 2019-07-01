@@ -25,7 +25,7 @@ const CurrentCrumb = styled.span`
 const BreadCrumbsContainer = () => (
   <BreadCrumbs
     renderWrapper={renderChildren => (
-      <BreadCrumbsStyled>{renderChildren()}x</BreadCrumbsStyled>
+      <BreadCrumbsStyled>{renderChildren()}</BreadCrumbsStyled>
     )}
     renderSeparator={() => <Separator>&raquo;</Separator>}
     renderCurrentRouteCrumb={title => <CurrentCrumb>{title}</CurrentCrumb>}

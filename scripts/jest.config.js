@@ -13,7 +13,7 @@ module.exports = {
     "!**/node_modules/**",
     "!**/scripts/**",
     "!**/lib/**",
-    "!**/demo/**"
+    "!**/demoapp/**"
   ],
   coverageReporters: ["text", "text-summary", "json", "html"]
 };

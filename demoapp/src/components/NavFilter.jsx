@@ -2,6 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import style from "styled-components";
 
+const Container = style.div`
+    padding:10px
+`;
+
 const InputStyled = style.input`
   display: block;
   box-sizing: border-box;
@@ -22,17 +26,19 @@ const InputStyled = style.input`
 `;
 
 const NavFilter = ({ value, onChange, placeholder, ...restProps }) => (
-  <InputStyled
-    type="text"
-    onChange={event => onChange(event.target.value)}
-    value={value}
-    placeholder={placeholder}
-    {...restProps}
-  />
+  <Container>
+    <InputStyled
+      type="text"
+      onChange={event => onChange(event.target.value)}
+      value={value}
+      placeholder={placeholder}
+      {...restProps}
+    />
+  </Container>
 );
 
 NavFilter.defaultProps = {
-  placeholder: ""
+  placeholder: "Filter"
 };
 
 NavFilter.propTypes = {

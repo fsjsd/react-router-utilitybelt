@@ -16,7 +16,7 @@ import {
 
 // implement these in your own project to customise
 import { appRoutes, navItemGroups } from "./AppRoutes";
-import NavFilterContainer from "./components/NavFilterContainer";
+import NavFilter from "./components/NavFilter";
 import BreadCrumbsContainer from "./components/BreadCrumbsContainer";
 import DrawerNavigationContainer from "./components/DrawerNavigationContainer";
 
@@ -43,7 +43,7 @@ function App() {
           renderNavigation={() => (
             <div>
               {/* Filter control for nav */}
-              <NavFilterContainer
+              <NavFilter
                 onChange={filterText => setNavFilter(filterText)}
                 value={navFilter}
               />

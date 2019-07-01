@@ -10,7 +10,8 @@ import { AppRoutesContext } from "../services/AppRoutesContext";
 
 const DrawerNavigation = ({
   filter,
-  renderDrawerContainer,
+  renderDrawerControl,
+  renderDrawerMenu,
   renderRouteNavLinks,
   renderRouteNavLink,
   renderBackLink,
@@ -92,49 +93,48 @@ const DrawerNavigation = ({
       </>
     ));
 
-  // adjust drawer 'slided' state based on if showSubNav set
-  const drawerWrapperClassNames = `DrawerWrapper${
-    subDrawerOpen && filter === "" ? " Opened" : ""
-  }`;
+  const isOpen = () => subDrawerOpen && filter === "";
 
   return (
     <div className={className}>
-      <div className={drawerWrapperClassNames}>
-        {renderDrawerContainer("main", () =>
-          filter !== "" ? (
-            // either render flat search results ...
-            navLinksGroup(appRoutesList.filter(filterRoutes(filter)))
-          ) : (
-            // or the route defintions in their respective groups ...
-            <>
-              {navItemGroups &&
-                navItemGroups.map(group => (
-                  <Fragment key={group}>
-                    {group !== "" ? renderNavGroup(group) : ""}
-                    {navLinksGroup(
-                      appRoutesList.filter(
-                        route =>
-                          route.showInNav &&
-                          !route.parent &&
-                          route.group === group
-                      )
-                    )}
-                  </Fragment>
-                ))}
-            </>
-          )
-        )}
-        {renderDrawerContainer("sub", () => {
-          return (
-            <>
-              {renderBackLink(handleBackClick)}
-              {subDrawerOpen ? (
-                <>{navLinksGroup(appRoutesList.filter(subNavFilter))}</>
-              ) : null}
-            </>
-          );
-        })}
-      </div>
+      {renderDrawerControl(isOpen(), () => (
+        <>
+          {renderDrawerMenu("main", () =>
+            filter !== "" ? (
+              // either render flat search results ...
+              navLinksGroup(appRoutesList.filter(filterRoutes(filter)))
+            ) : (
+              // or the route defintions in their respective groups ...
+              <>
+                {navItemGroups &&
+                  navItemGroups.map(group => (
+                    <Fragment key={group}>
+                      {group !== "" ? renderNavGroup(group) : ""}
+                      {navLinksGroup(
+                        appRoutesList.filter(
+                          route =>
+                            route.showInNav &&
+                            !route.parent &&
+                            route.group === group
+                        )
+                      )}
+                    </Fragment>
+                  ))}
+              </>
+            )
+          )}
+          {renderDrawerMenu("sub", () => {
+            return (
+              <>
+                {renderBackLink(handleBackClick)}
+                {subDrawerOpen ? (
+                  <>{navLinksGroup(appRoutesList.filter(subNavFilter))}</>
+                ) : null}
+              </>
+            );
+          })}
+        </>
+      ))}
     </div>
   );
 };
