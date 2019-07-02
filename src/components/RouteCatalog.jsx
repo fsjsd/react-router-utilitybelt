@@ -11,7 +11,7 @@ import { AppRoutesContext } from "../services/AppRoutesContext";
 const RouteCatalog = ({ onRouteNotFound }) => {
   const { appRoutesList } = useContext(AppRoutesContext);
 
-  console.log("RouteCatalog", appRoutesList);
+  //console.log("RouteCatalog", appRoutesList);
 
   // TODO: test whether route.component is a React component and
   // not a React Element, throw error accordingly
