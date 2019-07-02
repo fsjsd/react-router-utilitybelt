@@ -1,8 +1,6 @@
 # React Router Utility Belt
 Opinionated react-router UI components with unopinionated styling!
 
-[![Edit react-router-utilitybelt](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/fsjsd/react-router-utilitybelt/tree/master/?fontsize=14)
-
 Helps solve some common real world navigation concerns with React Router, like:
 
 * :gem: Single "source of truth" for route defintions to prevent multiple nav components repeating data
