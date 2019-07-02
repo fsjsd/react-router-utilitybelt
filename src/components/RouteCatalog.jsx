@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import { Route, Switch } from 'react-router-dom';
-import { AppRoutesContext } from '../services/AppRoutesContext';
+import React, { useContext } from "react";
+import PropTypes from "prop-types";
+import { Route, Switch } from "react-router-dom";
+import { AppRoutesContext } from "../services/AppRoutesContext";
 
 // RouteCatalog Component
 // ========================
@@ -10,6 +10,11 @@ import { AppRoutesContext } from '../services/AppRoutesContext';
 
 const RouteCatalog = ({ onRouteNotFound }) => {
   const { appRoutesList } = useContext(AppRoutesContext);
+
+  console.log("RouteCatalog", appRoutesList);
+
+  // TODO: test whether route.component is a React component and
+  // not a React Element, throw error accordingly
   return (
     <Switch>
       {appRoutesList.map(route => (
@@ -17,18 +22,16 @@ const RouteCatalog = ({ onRouteNotFound }) => {
           key={route.path}
           path={route.path}
           exact={route.exact}
-          render={routeProps => (
-            <route.component {...routeProps} />
-          )}
+          render={routeProps => <route.component {...routeProps} />}
         />
       ))}
-      <Route render={() => onRouteNotFound} />
+      {onRouteNotFound && <Route render={() => onRouteNotFound()} />}
     </Switch>
   );
 };
 
 RouteCatalog.propTypes = {
-  onRouteNotFound: PropTypes.func.isRequired,
+  onRouteNotFound: PropTypes.func.isRequired
 };
 
 export default React.memo(RouteCatalog);

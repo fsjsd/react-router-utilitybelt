@@ -1,16 +1,16 @@
 {
   "name": "react-router-utilitybelt",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "Opinionated react-router UI components with unopinionated styling!",
   "main": "index.js",
   "scripts": {
     "prepublishOnly": "npm run release",
     "release": "npm run build:dev && npm run build:prod",
-    "build:dev": "cross-env NODE_ENV=development rollup -c \"./scripts/rollup.config.development.js\" ",
-    "build:prod": "cross-env NODE_ENV=production rollup -c \"./scripts/rollup.config.production.js\" ",
     "test": "npm run build:dev && jest --config ./scripts/jest.config.js",
-    "demo": "npm run build:dev && cd demoapp && npm run start",
-    "demoold": "cross-env NODE_ENV=demo rollup -c \"./scripts/rollup.config.demo.js\" && live-server --open=./demo/ "
+    "demo": "npm run build:demo && cd demoapp && npm run start",
+    "build:demo": "cross-env NODE_ENV=development rollup -c \"./scripts/rollup.config.demo.js\" ",
+    "build:dev": "cross-env NODE_ENV=development rollup -c \"./scripts/rollup.config.development.js\" ",
+    "build:prod": "cross-env NODE_ENV=production rollup -c \"./scripts/rollup.config.production.js\" "
   },
   "repository": {
     "type": "git",
@@ -42,6 +42,7 @@
     "rollup": "^1.15.6",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-babel-minify": "^8.0.0",
+    "rollup-plugin-cleanup": "^3.1.1",
     "rollup-plugin-commonjs": "^10.0.0",
     "rollup-plugin-minify": "^1.0.3",
     "rollup-plugin-node-resolve": "^5.0.3",

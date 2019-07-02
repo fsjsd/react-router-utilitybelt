@@ -11,10 +11,10 @@ console.log("rollup", NODE_ENV);
 export default {
   input: "./src/exports.js",
   output: {
-    file: "./demoapp/node_modules/react-router-utilitybelt/index.js",
+    file: "./lib/dev.js",
     format: "cjs"
   },
-  external: ["react", "react-dom", "react-router-dom"],
+  external: ["react", "react-dom", "react-router-dom", "fsjsd-lgr"],
   plugins: [
     replace({
       "process.env.NODE_ENV": JSON.stringify(NODE_ENV)

@@ -40,7 +40,7 @@ const DrawerNavigation = ({
 */
   const [subDrawerOpen, setSubDrawerOpen] = useState(false);
 
-  const useSubNavOnMount = currentRoute.showSubNav;
+  const useSubNavOnMount = currentRoute && currentRoute.showSubNav;
 
   const parentRoute = appRoutes[currentRoute.parent];
 
@@ -82,7 +82,11 @@ const DrawerNavigation = ({
     if (currentRouteHasChildRoutes) {
       return route.showInNav && route.parent === currentRoute.path;
     }
-    return route.showInNav && route.path === currentRoute.path;
+
+    return (
+      route.showInNav &&
+      (route.path === currentRoute.path || route.parent === currentRoute.parent)
+    );
   };
 
   const navLinksGroup = routeDefs =>

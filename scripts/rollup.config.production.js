@@ -15,6 +15,7 @@ export default {
     file: "./lib/prod.js",
     format: "cjs"
   },
+  external: ["react", "react-dom", "react-router-dom", "fsjsd-lgr"],
   plugins: [
     replace({
       "process.env.NODE_ENV": JSON.stringify(NODE_ENV)
