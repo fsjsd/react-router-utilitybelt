@@ -28,6 +28,7 @@ No other 3rd party packages are used so you can reason about what's going on wit
 
 To run, git clone and run
 
-> yarn install
-
-> yarn start
+```
+yarn install
+yarn start
+```
