@@ -26,9 +26,6 @@ No other 3rd party packages are used so you can reason about what's going on wit
 
 ## Install
 
-To run, git clone and run
+To run the demo, git clone and run ```npm install``` in both the root and the demo folder which is a stand alone CRA app.
 
-```
-yarn install
-yarn start
-```
+Run ```npm run demo``` in the root to launch the demo app.
