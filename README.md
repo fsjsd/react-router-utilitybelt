@@ -1,6 +1,8 @@
 # React Router Utility Belt
 Opinionated react-router UI components with unopinionated styling!
 
+![React Router Utility Belt Preview](https://github.com/fsjsd/react-router-utilitybelt/blob/master/docs/reactrouterutilitybelt.gif?raw=true)
+
 Helps solve some common real world navigation concerns with React Router, like:
 
 * :gem: Single "source of truth" for route defintions to prevent multiple nav components repeating data
