@@ -2,7 +2,7 @@
 
 Opinionated react-router UI components with unopinionated styling!
 
-[![Edit react-router-utilitybelt](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/fsjsd/react-router-utilitybelt/tree/master/?fontsize=14)
+![React Router Utility Belt Preview](https://github.com/fsjsd/react-router-utilitybelt/blob/master/docs/reactrouterutilitybelt.gif?raw=true)
 
 Helps solve some common real world navigation concerns with React Router, like:
 
@@ -29,8 +29,6 @@ No other 3rd party packages are used so you can reason about what's going on wit
 
 ## Install
 
-To run, git clone and run
+To run the demo, git clone and run ```npm install``` in both the root and the demo folder which is a stand alone CRA app.
 
-> yarn install
-
-> yarn start
+Run ```npm run demo``` in the root to launch the demo app.
