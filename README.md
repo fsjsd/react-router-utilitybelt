@@ -1,5 +1,7 @@
 # React Router Utility Belt
 
+![React Router Utility Belt](https://github.com/fsjsd/react-router-utilitybelt/blob/master/docs/readme-header-reactrouterutilitybelt.jpg?raw=true)
+
 Opinionated react-router UI components with unopinionated styling!
 
 ![React Router Utility Belt Preview](https://github.com/fsjsd/react-router-utilitybelt/blob/master/docs/reactrouterutilitybelt.gif?raw=true)
@@ -29,6 +31,6 @@ No other 3rd party packages are used so you can reason about what's going on wit
 
 ## Install
 
-To run the demo, git clone and run ```npm install``` in both the root and the demo folder which is a stand alone CRA app.
+To run the demo, git clone and run `npm install` in both the root and the demo folder which is a stand alone CRA app.
 
-Run ```npm run demo``` in the root to launch the demo app.
+Run `npm run demo` in the root to launch the demo app.
