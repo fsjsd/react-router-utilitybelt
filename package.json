@@ -57,6 +57,6 @@
     "react-router-dom": "^5.0.1"
   },
   "dependencies": {
-    "fsjsd-lgr": "0.0.5"
+    "fsjsd-lgr": "0.1.1"
   }
 }
