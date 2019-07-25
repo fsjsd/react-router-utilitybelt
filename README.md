@@ -34,3 +34,9 @@ No other 3rd party packages are used so you can reason about what's going on wit
 To run the demo, git clone and run `npm install` in both the root and the demo folder which is a stand alone CRA app.
 
 Run `npm run demo` in the root to launch the demo app.
+
+## Walkthrough Video
+
+Watch this video is see it in action and learn how to implement in your projects:
+
+[![Walkthrough on Youtube](https://github.com/fsjsd/react-router-utilitybelt/blob/master/docs/yt-thumb.jpg?raw=true)](https://www.youtube.com/watch?v=KgC50xKGPRo)
