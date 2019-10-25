@@ -40,7 +40,7 @@
     "react-router-dom": "5.1.2",
     "react-router-prop-types": "1.0.4",
     "rollup": "1.15.6",
-    "rollup-plugin-babel": "4.3.2",
+    "rollup-plugin-babel": "4.3.3",
     "rollup-plugin-babel-minify": "8.0.0",
     "rollup-plugin-cleanup": "3.1.1",
     "rollup-plugin-commonjs": "10.0.0",
