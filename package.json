@@ -1,6 +1,6 @@
 {
   "name": "react-router-utilitybelt",
-  "version": "0.0.8",
+  "version": "0.1.1",
   "description": "Opinionated react-router UI components with unopinionated styling!",
   "main": "index.js",
   "scripts": {
@@ -57,6 +57,6 @@
     "react-router-dom": "^5.0.1"
   },
   "dependencies": {
-    "fsjsd-lgr": "0.1.1"
+    "fsjsd-lgr": "^0.1.1"
   }
 }
