@@ -4563,10 +4563,10 @@ fsevents@^1.2.7:
     nan "^2.9.2"
     node-pre-gyp "^0.10.0"
 
-fsjsd-demosite@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/fsjsd-demosite/-/fsjsd-demosite-1.0.2.tgz#89b862d3b9d287eaf0d02a3beaa57d47bde5f423"
-  integrity sha512-ucemOUN67xjqf6wj5eeHDlU9ugHplXIkFtFGejDUhg5F9JR39RbzzsB7bua9Jx6hb4TtUKHyDzL7m2O1qZmjaA==
+fsjsd-demosite@1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/fsjsd-demosite/-/fsjsd-demosite-1.0.6.tgz#439f33c994a5baf68a10b81a4064f4495f7306da"
+  integrity sha512-8nV8Jz/zBdOAA1uLYk7PLE0yzWDdtvIZX7E9sYVm0o2FbghKb31WPtNZeNUuE9rLRamVEbpbsqHh8tvtNg1W+A==
 
 function-bind@^1.1.1:
   version "1.1.1"
