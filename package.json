@@ -32,7 +32,7 @@
     "@babel/plugin-external-helpers": "7.2.0",
     "@babel/preset-env": "7.4.5",
     "@babel/preset-react": "7.0.0",
-    "cross-env": "5.2.0",
+    "cross-env": "6.0.3",
     "live-server": "1.2.1",
     "react": "16.8.6",
     "react-dom": "16.8.6",
