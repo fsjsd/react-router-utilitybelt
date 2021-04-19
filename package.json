@@ -37,7 +37,7 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-icons": "3.8.0",
-    "react-router-dom": "5.1.2",
+    "react-router-dom": "5.2.0",
     "react-router-prop-types": "1.0.4",
     "rollup": "1.27.14",
     "rollup-plugin-babel": "4.3.3",
@@ -54,7 +54,7 @@
   "peerDependencies": {
     "react": ">= 16.8.6",
     "react-dom": "^16.8.6 || ^17.0.0",
-    "react-router-dom": "^5.0.1"
+    "react-router-dom": "^5.0.1 || ^5.2.0"
   },
   "dependencies": {
     "fsjsd-lgr": "^0.1.1"
