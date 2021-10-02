@@ -41,7 +41,7 @@
     "react-router-prop-types": "1.0.4",
     "rollup": "1.27.14",
     "rollup-plugin-babel": "4.3.3",
-    "rollup-plugin-babel-minify": "9.1.1",
+    "rollup-plugin-babel-minify": "10.0.0",
     "rollup-plugin-cleanup": "3.1.1",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-minify": "1.0.3",
