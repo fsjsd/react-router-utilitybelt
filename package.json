@@ -36,7 +36,7 @@
     "live-server": "1.2.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "react-icons": "3.8.0",
+    "react-icons": "4.3.1",
     "react-router-dom": "5.1.2",
     "react-router-prop-types": "1.0.4",
     "rollup": "1.27.14",
